@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>oops classes</title>
+</head>
+<body>
+    <h1>class expressions</h1>
+    <script>
+        class one{
+            constructor(a,b){
+                this.g=a;  //this refers to address of g&H
+                this.h=b;
+            }
+            print(){
+                document.write(this.g+""+this.h);
+            }
+
+        }
+        let i=new one("java","script");
+        i.print();
+    </script>
+    <h2>static methods</h2>
+    <script>
+        class two{
+            static example(){
+                return "static method does not support for this key word";
+            }
+        }
+        document.write(two.example());
+    </script>
+    <h2>prototype example</h2>
+    <script>
+        function person(name,yearOfBirth){
+            this.name=name;
+            this.yearOfBirth=yearOfBirth;
+        }
+        person.prototype.calculateAge=function(){
+            document.write('the current age is: '+(2024-this.yearOfBirth));
+        }
+        document.write(person.prototype);
+        let person1=new person('achyu', 1998);
+        document.write(person1);
+        let person2=new person('kiran',1996);
+        document.write(person2);
+        person1.calculateAge();
+        person2.calculateAge();
+    </script>
+</body>
+</html>
