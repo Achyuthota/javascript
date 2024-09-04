@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>oops concepts</title>
+</head>
+<body>
+    <h1>object literal</h1>
+    <script>
+        let person={
+            f_name:"achyuth",
+            l_name:"mittu",
+            //method
+            getfuncton: function(){
+                return(`The name of the person is : ${person.f_name} ${person.l_name}`);
+            },
+            //objects with in the object
+            phone_number:{
+                fmobile:'73964',
+                lmobile:'47880',
+            }
+        }
+        document.write(person.getfuncton());
+        document.write(person.phone_number.fmobile);
+        document.write(person.phone_number.lmobile);
+    </script>
+    <h1>object with constructors</h1>
+    <script>
+        function emp(f_name, l_name){
+            this.f_name=f_name;
+            this.l_name=l_name;
+
+        }
+        //create new instance of emp object
+        let emp1=new emp('achyuth ','thota.. ');
+        let emp2=new emp('doraemon ','nobita ');
+        document.write(emp1.f_name);
+        document.write(emp1.l_name);
+        document.write(emp2.f_name);
+        document.write(emp2.l_name);
+        document.write(`${emp1.f_name} ${emp2.f_name}`);
+    </script>
+     <h1>object.create() method</h1>
+     <script>
+        const coder={
+            isStudying:false,
+            printIntroduction: function(){
+                document.write(`my name is ${this.name}, am i studying ${this.isStudying}`);
+
+            }
+        }
+        //object.create() method
+        const me=Object.create(coder);
+        //name is property set on me. but not on coder
+        me.name='achyuth';
+        me.isStudying=true;
+        me.printIntroduction();
+     </script>
+     <h2>vs6 way od defining object and stimulate them as class</h2>
+     <script>
+        class laptop{
+            constructor(name,storage, battery){
+                this.name=name;
+                this.storage=storage;
+                this.battery=battery;
+            }
+            getDetails(){
+                return(`The name of the laptop is ${this.name}`);
+
+            }
+        }
+            // maaking the object with the help of constructor
+            let laptop1=new laptop('lenovo .','50gb','5hrs');
+            let laptop2=new laptop(' hp','100gb','6hrs');
+            document.write(laptop1.name);
+            document.write(laptop2.name);
+            document.write(laptop1.getDetails());
+            document.write(laptop2.getDetails());
+        
+     </script>
+    
+       
+    
+</body>
+</html>
